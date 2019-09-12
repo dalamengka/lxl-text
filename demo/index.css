@@ -1,0 +1,15 @@
+body{
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+    color: green;
+    background-color: deeppink;
+    width: 1250px;
+    height: 1250px;
+}
+div{
+    width: 200px;
+    height: 200px;
+    background-color: deepskyblue;
+    border-radius: 50%;
+}
