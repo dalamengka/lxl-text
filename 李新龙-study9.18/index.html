@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>数字之和</title>
+    <style>
+     body{
+         color: deeppink;
+     }
+    </style>
+</head>
+<body>
+    <a href="javascript:alert('点我干嘛');" id="qaq"></a>←结果在这里<br>
+    <input type="text" id="nmsl">+<input type="text" id="nmsl_2">
+    <button id="btn">计算</button>
+
+    <script>
+        var nmsl = document.getElementById('nmsl');
+        var nmsl_2 = document.getElementById('nmsl_2');
+        btn.onclick = function(){
+            var c = Number(nmsl.value) + Number(nmsl_2.value);
+            var d = parseInt(c);
+            console.log(d);
+            qaq.innerHTML = d;
+            if(isNaN(d)){
+            alert('请输入数字ok?');
+        }
+        else{
+            
+        }
+        }
+        
+    </script>
+</body>
+</html>
