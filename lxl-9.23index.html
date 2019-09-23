@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .blue{
+        background-color: deepskyblue;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div');
+        var div2= document.getElementsByClassName('div[2]')
+        for(var i=0;i<div.length;i++){
+            div[i].style.height='50px';
+            div[i].style.width='50px';
+            div[i].style.backgroundColor='red';
+            div[i].style.float='left';
+        }
+        div[2].style.backgroundColor = "";
+        div[2].className = "blue";
+    </script>
+</body>
+</html>
