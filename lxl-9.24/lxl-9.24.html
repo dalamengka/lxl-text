@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <style>
+        body{/* 整体样式 */
+            /* width: 1350px; */
+            margin: 0%;
+            padding: 0%;
+        }
+        #view{/* 导航1样式 */
+            background-color: #3F51B5;
+            width: 100%;
+        }
+        #view_value{/* 导航1内荣整体样式 */
+            margin: 0 auto;
+            width: 165px;
+            height: 175px;
+            padding-top: 20px;
+        }
+        #view_value>img{/* 导航1图片样式 */
+            width: 120px;
+            height: 120px;
+            display: block;
+            margin: 0 auto;
+        }
+        #view_value>p{/* 导航仪字体样式 */
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+        }
+        #pst{/* 绝对定位图片样式 */
+            border-radius: 50px;
+            position: fixed;
+            top:80%;
+            left:90%;
+            cursor: pointer;
+        }
+        #view2{/* 导航2样式 */
+            background-color: #3A4BA7;
+            width: 100%;
+        }
+        #view2>ul{/* 导航2ul样式 */
+            width: 70%;
+            height: 42px;
+            margin: 0 auto;
+            padding-inline-start: 0px;
+        }
+        #view2>ul>li{/* 导航2li样式 */
+            width: 70%;
+            margin: 0 auto;
+            display: block;
+        }
+        #view2>ul>li>p{/* 导航2字体样式 */
+            width: 25%;
+            height: 42px;
+            float: left;
+            margin: 0 auto;
+            font-size: 14px;
+            color: #E0E2F1;
+            line-height: 42px;
+            text-align: center;
+        }
+        #view2>ul>li>p:hover{/* 导航2字体hover样式 */
+            color:#fff;
+            cursor: pointer;
+        }
+        .clear{/* 清除浮动影响 */
+            clear: both;
+        }
+        #container{/* 弹性布局 */
+            width: 65%;
+            display: flex;
+            flex-wrap:wrap;
+            justify-content:space-between;
+            margin: 0% auto;
+            margin-bottom: 40px;
+        }
+        #container_value{/* 弹性布局每个div样式 */
+        width: 280px;
+        height: 400px;
+        margin-top: 10px;
+        box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        #container_value div{/* 弹性布局每个div内图片样式 */
+        width: 100%;
+        height: auto;
+        margin: 0 ;
+        padding: 0;
+        }
+        #container_value h2{/* 弹性布局每个div内小标题样式 */
+        padding: 10px 10px 5px 15px;
+        margin: 0;
+        font-weight: 100;
+        }
+        #container_value p{/* 弹性布局每个div内文字样式 */
+        padding: 10px 10px 5px 15px;
+        margin: 0;
+        text-overflow:ellipsis;
+        font-size: 13px;
+        color: rgba(0,0,0,.54);
+        padding-bottom: 30px;
+        border-bottom: 1px solid #E5E5E5;
+        }
+        #container_value a{/* 弹性布局每个div内'更多'样式 */
+        padding: 11px 11px 11px 11px;
+        position: relative;
+        top: 10px;
+        left: 20px;
+        color: #FF4B88;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 14px;
+        }
+        #container_value a:hover{
+            background-color: #ECECEC;
+        }
+        #footer{
+            width: 100%;
+            height: 100px;
+            background-color: #424242;
+        }
+        #footer_value p{
+            color: #fff;
+            font-size: 15px;
+            text-align: center;
+            float: left;
+            margin: 0 auto;
+        }
+        #footer_value a{
+            float: left;
+            color: #fff;
+            font-size: 15px;
+            border-bottom: 1px dashed #fff;
+            text-decoration: none;
+        }
+        #footer_value span{
+            float: left;
+            color: #8C8C8C;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="view"><!-- 导航栏 -->
+        <div id="view_value">
+            <img src="site-logo.png" alt="加载有点慢QAQ">
+            <p class="view_text">Material Design Portfolio</p>
+        </div>
+    </div>
+    <div id="view2"><!-- 导航栏2 -->
+            <ul>
+                <li><p>HOME</p></li>
+                <li><p>PORTFOLIO</p></li>
+                <li><p>ABOUT</p></li>
+                <li><p>CONTACT</p></li>
+            </ul>
+        </div>
+        <p class="clear"></p><!-- 清除浮动影响 -->
+    <div id="container"><!-- 中间弹性布局大div -->
+        <div id="container_value">
+            <img src="portfolio1.jpg" alt="加载有点慢QAQ" class="container_img">
+            <h2>Rcoky Peak</h2>
+            <p>
+                    Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                </p>
+            <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+            <img src="portfolio2.jpg" alt="加载有点慢QAQ" class="container_img">
+            <h2>Night Shadow</h2>
+            <p>
+                    Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                </p>
+            <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio3.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Sky Reach</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio4.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Pencil Tip</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio5.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Magic Leaves</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio6.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Water Flow</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio7.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Lonely Bridge</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio8.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>Busy Street</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+        <div id="container_value">
+                <img src="portfolio9.jpg" alt="加载有点慢QAQ" class="container_img">
+                <h2>City Scape</h2>
+                <p>
+                        Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt..
+                    </p>
+                <a href="#">LEARN MORE</a>
+        </div>
+    </div>
+    <div id="footer"><!-- 页脚 -->
+        <div id="footer_value">
+            <p>Copyright © 2019.Company name All rights reserved.</p>
+            <a href="#">网页模板</a>
+            <span>Privacy & Terms</span>
+        </div>
+    </div>
+    <img src="portfolio10.png" alt="" id="pst"><!-- 绝对定位 -->
+    <script>
+        var cimg = document.getElementsByClassName('container_img');
+        console.log(cimg);
+        var foot = document.getElementById('footer_value');
+        foot.style.display= 'block';
+        foot.style.height= '100px';
+        foot.style.lineHeight='100px';
+        foot.style.margin= '0 auto';
+        foot.style.width= '50%';
+        for(var i=0;i<=cimg.length;i++){
+            cimg[i].style.width='100%';
+        }
+        
+    </script>
+</body>
+</html>
