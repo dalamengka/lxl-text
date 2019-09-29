@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        #big{
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+            background-color:rgba(0, 0, 0, 0.5);
+            background:opacity(0.5);
+        }
+        #sm{
+            width: 360px;
+            height: 550px;
+            margin:0 auto;
+            background-color:rgba(0, 0, 0, 0);
+            position: relative;
+            top: 70px;
+        }
+        #fr>span{
+            color: #fff;
+            font-size: 18px;
+            margin-right: 15px;
+            width: 100px;
+        }
+        #fr>span:first-child{
+            border-bottom: 1px solid deepskyblue;
+        }
+        #sc>p{
+            color:#BCC1D0;
+            font-size:14px;
+            margin-bottom: 0px;
+        }
+        #sc>input{
+            width: 99%;
+            height: 50px;
+            border-radius: 30px;
+            color: #fff;
+            background-color: rgba(0,0,0,0.3);
+            border:none;
+            text-indent:10px;
+        }
+        #btn{
+            width: 100%;
+            height: 50px;
+            background-color: #105FEB;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 50px;
+            margin-top: 5px;
+        }
+        #sp1,#sp3,#sp4{
+            display: none;
+            color: red;
+        }
+        #sp2{
+            color: greenyellow;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="big">
+        <div id="sm">
+            <div id="fr">
+                <span>注册</span>
+                <span>登录</span>
+            </div>
+            <div id="sc">
+                <p>请输入用户名:</p>
+                <input type="text" id="inp1" value="">
+                <span id="sp1">该用户名已被注册!</span>
+                <span id="sp2">该用户名可以使用.</span>
+                <span id="sp3">请输入用户名!</span>
+            </div>
+            <div id="sc">
+                    <p>请设置密码:</p>
+                    <input type="password" id="inp2" value="">
+                    <span id="sp4">密码不能为空!</span>
+            </div>
+            <br>
+            <input type="button" value="提交注册" id="btn">
+            <hr>
+            <div>
+                <input type="radio" id="ra"><label for="ra" style="color: #fff">我同意<<注册须知>>相关内容.</label>
+            </div>
+        </div>
+    </div>
+    <script>
+        var inp1 = document.getElementById('inp1');
+        var inp2 = document.getElementById('inp2');
+        var btn = document.getElementById('btn');
+        var sp1 = document.getElementById('sp1');
+        var sp2 = document.getElementById('sp2');
+        var sp3 = document.getElementById('sp3');
+        var sp4 = document.getElementById('sp4');
+        var arr= ['tom','jack','lili'];
+        inp2.onblur=function(){//获取焦点
+        if(inp2.value==''){
+            sp4.style.display='block';
+        }
+        inp2.onblur=function(){
+            if(inp2.value!=''){
+            sp4.style.display='none';
+        }
+        }
+        }
+        inp1.onblur=function(){//失去焦点
+        if(inp1.value==''){sp3.style.display='block'; sp2.style.display='none'; sp1.style.display='none';}
+        if(arr.indexOf(inp1.value)!=-1){sp1.style.display='block'; sp2.style.display='none';}
+        if(inp1.value!=''&&arr.indexOf(inp1.value)==-1){sp1.style.display='none'; sp3.style.display='none'; sp2.style.display='block';}
+        }
+        btn.onclick = function(){
+            console.log(inp1.value);
+            console.log(inp2.value);
+            console.log(arr.indexOf(inp2.value));
+            if(sp1.style.display=='block'||sp3.style.display=='block'||sp4.style.display=='block'||inp2.value==''){
+                alert('抱歉您不符合注册条件,请检查您的账号以及密码输入是否正确!');
+            }
+            if(sp2.style.display=='block'&&inp2.value!=''){
+                alert('注册成功!');
+            }
+        }
+
+    </script>
+</body>
+</html>
