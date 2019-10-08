@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var div = document.getElementsByTagName('div');
+        for(var i=0;i<6;i++){
+            div[i].onclick=function(){
+                this.style.backgroundColor='blue';
+                this.style.borderRadius='0%';
+            }
+        }
+    </script>
+</body>
+</html>
