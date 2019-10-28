@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>魄罗轮播图</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "微软雅黑";
+        }
+        .clearFloat::after{/* 清除浮动影响 */
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+.clearFloat{
+    zoom: 1;
+}
+        #big{
+            width: 1200px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        #big #llbt{
+            width: 550px;
+            margin-right: 45px;
+            height: 45%;
+            float: left;
+            position: relative;
+        }
+        #big #llbt #xlbt{
+            width: 100%;
+            height: 300px;
+            border: 2px solid deeppink;
+            overflow: hidden;
+        }
+        #big #llbt #xlbt img{
+            width: 100%;
+            height: 100%;
+        }
+        #big #llbt .mul{
+            width: 345px;
+            height: 55px;
+            margin: 5px auto;
+        }
+        #big #llbt .mul li{
+            width: 50px;
+            height: 50px;
+            list-style: none;
+            float: left;
+            margin-right: 5px;
+        }
+        #big #rlbt{
+            width: 600px;
+            height: 500px;
+            /* border: 2px solid deepskyblue; */
+            float: left;
+            display: none;
+        }
+        #big #llbt span{
+            width: 20px;
+            height: 50px;
+            border: 1px solid green;
+            line-height: 50px;
+            text-align: center;
+            display: block;
+        }
+        #big #llbt>#lf{
+            position: absolute;
+            left: 1px;
+            bottom: 1px;
+        }
+        #big #llbt>#rt{
+            position: absolute;
+            right: 1px;
+            bottom: 1px;
+        }
+        .active{
+            display: block;
+            border: 1px solid deeppink;
+        }
+    </style>
+</head>
+<body>
+    <div id="big">
+        <div id="llbt">
+            <div id="xlbt">
+                <img src="img/0.jpg" alt="">
+                <img src="img/1.jpg" alt="">
+                <img src="img/2.jpg" alt="">
+                <img src="img/3.jpg" alt="">
+                <img src="img/4.jpg" alt="">
+                <img src="img/5.jpg" alt="">
+            </div>
+            <ul class="mul clearFloat">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <span id="lf"><</span>
+            <span id="rt">></span>
+        </div>
+        <div id="rlbt"></div>
+    </div>
+    <script>
+        var xlbt = document.getElementById('xlbt');
+        var rlbt = document.getElementById('rlbt');
+        var mul = document.getElementById('mul');
+        var lf = document.getElementById('lf');
+        var rt = document.getElementById('rt');
+        var mli = document.getElementsByTagName('li');
+        var mimg = document.getElementsByTagName('img');
+        var a = 0;
+        var dsq = null;
+        rlbt.style.backgroundImage='url(img/0.jpg)';
+        for(var i = 0;i<mli.length;i++){
+            mli[i].style.backgroundImage='url(img/'+i+'.jpg)';
+            mli[i].style.backgroundSize='cover';
+            rlbt.style.backgroundSize='cover';
+            mli[i].setAttribute('nmsl',i);
+            mli[i].onmouseover=function(){
+                clearInterval(dsq);
+                for(var j=0;j<mli.length;j++){
+                    mli[j].className='';
+                    mimg[j].style.display='none';
+                }
+                this.className='active';
+                mimg[this.getAttribute('nmsl')].style.display='block';
+                a = this.getAttribute('nmsl');
+                rlbt.style.backgroundImage='url(img/'+a+'.jpg)';
+            }
+            mli[i].onmouseleave=function(){
+                dsq=setInterval(e, 1000);
+            }
+        }
+        lf.onclick=q;
+        function q(){
+            a--; 
+            if(a<0){
+                a=mli.length-1;
+            }
+            mli[a].style.backgroundImage='url(img/'+a+'.jpg)';
+                for(var j=0;j<mli.length;j++){
+                    mli[j].className='';
+                    mimg[j].style.display='none';
+                }
+                mli[a].className='active';
+                mimg[a].style.display='block';
+                rlbt.style.backgroundImage='url(img/'+a+'.jpg)'; 
+        }
+        rt.onclick=e;
+        function e(){
+            a++; 
+            if(a==mli.length){
+                a=0;
+            }
+            mli[a].style.backgroundImage='url(img/'+a+'.jpg)';
+                for(var j=0;j<mli.length;j++){
+                    mli[j].className='';
+                    mimg[j].style.display='none';
+                }
+                mli[a].className='active';
+                mimg[a].style.display='block';
+                rlbt.style.backgroundImage='url(img/'+a+'.jpg)'; 
+        }
+        xlbt.onmouseover=function(){
+            rlbt.style.display='block';
+            clearInterval(dsq);
+        }
+        xlbt.onmouseleave=function(){
+            rlbt.style.display='none';
+            dsq=setInterval(e, 1000);
+        }
+        dsq=setInterval(e, 1000);
+    </script>
+</body>
+</html>
