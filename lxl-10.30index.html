@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>随机背景色</title>
     <script src="jquery.min.js"></script>
     <style>
         *{
@@ -55,7 +55,8 @@
             top:'0px',
             left:'0px',
             float:'left',
-            transition:'0.5s'
+            transition:'0.5s',
+            border:'1px solid deepskyblue'
             });
             var r1 = parseInt(Math.random() * (255 + 1) ,10);
             var r2 = parseInt(Math.random() * (255 + 1) ,10);
@@ -64,7 +65,10 @@
             hh.style.backgroundColor='rgb('+r3+','+r1+','+r2+')';
             // $("li:first").click("nmsl");
             // myli[0].onclick=nmsl;
-            $("ul").click(nmsl);
+            console.log($("li").eq(2));
+            // $("ul").click(nmsl);
+            $("li").eq(0).click(nmsl);
+            $("li").eq(0).css("z-index","10");
             hh.onclick=nmsl;
                 function nmsl(){
                 if(a){
