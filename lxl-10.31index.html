@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>商品</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #num1{
+            width: 35px;
+            text-align: center;
+        }
+        button{
+            width: 25px;
+            height: 25px;
+        }
+        #all{
+            width: 400px;
+            margin: 0 auto;
+        }
+        #all #btn2,#btn5{
+            background-color: #fff;
+            border: none;
+            outline: none;
+        }
+        .mi{
+            margin-right: 48.5px;
+        }
+    </style>
+</head>
+<body>
+<div id="all">
+    <input type="checkbox" name="hua" id="wei">
+    <label for="wei">华为mate20</label>&nbsp;&nbsp;&nbsp;&yen;3699
+    <button id="btn1">-</button>
+    <button id="btn2">0</button>
+    <button id="btn3">+</button>合计:&yen;
+    <span id="hj1">0</span>
+    <br>
+    <input type="checkbox" name="xiao" id="mi">
+    <label for="mi" class="mi">小米9</label>&nbsp;&nbsp;&nbsp;&yen;1699
+    <button id="btn4">-</button>
+    <button id="btn5">0</button>
+    <button id="btn6">+</button>合计:&yen;
+    <span id="hj2">0</span>
+    <br>
+    <p id="p1"></p><p id="p2"></p>
+    <script>
+        var a = 0;
+        var c = 0;
+        $("#btn1").click(function(){
+            a--;
+            $("#btn2").html(a);
+            if($("#btn2").html()<0){
+                a=0;
+                $("#btn2").html(a);
+            }
+            $("#hj1").html(3699*a);
+        });
+        $("#btn3").click(function(){
+            a++;
+            $("#btn2").html(a);
+            $("#hj1").html(3699*a);
+        });
+        $("#wei").change(function(){
+            if($("#wei").prop("checked")==true){
+                $("#p1").html("共"+$('#btn2').html()+"件商品");
+                $("#p2").html("合计"+$('#hj1').html()+"元");
+                if($("#mi").prop("checked")==true){
+                    $("#p1").html("共"+$("#btn2").html()+'+'+$("#btn5").html()+"件商品");
+                    $("#p2").html("共"+$("#hj1").html()+'+'+$("#hj2").html()+"元")
+                }
+            }
+            else{
+                $("#p1").html("共"+$('#btn5').html()+"件商品");
+                $("#p2").html("合计"+$('#hj2').html()+"元");
+
+                if($("#mi").prop("checked")==false){
+                    $("#p1").html("共"+0+"件商品");
+                $("#p2").html("合计"+0+"元");
+                }
+            }
+            
+        })
+        /* **************************************** */
+        $("#btn4").click(function(){
+            c--;
+            $("#btn5").html(c);
+            if($("#btn5").html()<0){
+                c=0;
+                $("#btn5").html(c);
+            }
+            $("#hj2").html(1699*c);
+        });
+        $("#btn6").click(function(){
+            c++;
+            $("#btn5").html(c);
+            $("#hj2").html(1699*c);
+        });
+        $("#mi").change(function(){
+            if($("#mi").prop("checked")==true){
+                $("#p1").html("共"+$('#btn5').html()+"件商品");
+                $("#p2").html("合计"+$('#hj2').html()+"元");
+                if($("#wei").prop("checked")==true){
+                    $("#p1").html("共"+$("#btn2").html()+'+'+$("#btn5").html()+"件商品");
+                    $("#p2").html("共"+$("#hj1").html()+'+'+$("#hj2").html()+"元")
+                }
+            }else{
+                $("#p1").html("共"+$('#btn2').html()+"件商品");
+                $("#p2").html("合计"+$('#hj1').html()+"元");
+                if($("#wei").prop("checked")==false){
+                    $("#p1").html("共"+0+"件商品");
+                $("#p2").html("合计"+0+"元");
+                }
+            }
+        });
+            
+    </script>
+</div>
+</body>
+</html>
